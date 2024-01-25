@@ -49,8 +49,25 @@ public class Main {
                     System.out.printf("%.2f",quickRatio);
                     System.out.println("%");
                 }
-                case 2 ->
-                    System.out.println("test2");
+                case 2 -> {
+                    double cash;
+                    double marketSec;
+                    double currentLiability;
+                    double cashRatio;
+
+                    System.out.print("Enter Cash: ");
+                    cash = kb.nextDouble();
+                    System.out.println(" ");
+                    System.out.print("Enter Marketable securities: ");
+                    marketSec =kb.nextDouble();
+                    System.out.println(" ");
+                    System.out.print("Enter current liability: ");
+                    currentLiability = kb.nextDouble();
+
+                    cashRatio = (cash + marketSec) /currentLiability;
+                    System.out.printf("%.4f", cashRatio);
+                    System.out.println(" ");
+                }
                 case 3 ->
                     System.out.println("test3");
                 case 4 ->
