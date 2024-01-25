@@ -36,7 +36,7 @@ public class Main {
                     System.out.print("Enter Current Inventory total: ");
                     inventory = kb.nextDouble();
 
-                    quickRatio = (currentAssets - inventory) / currentLiabilities;
+                    quickRatio = ((currentAssets - inventory) / currentLiabilities) * 100.0;
 
                     System.out.printf("%.2f",quickRatio);
                     System.out.println("%");
