@@ -68,8 +68,22 @@ public class Main {
                     System.out.printf("%.4f", cashRatio);
                     System.out.println(" ");
                 }
-                case 3 ->
-                    System.out.println("test3");
+                case 3 -> {
+                    double currentAsset;
+                    double currentLiability;
+                    double currentRatio;
+
+                    System.out.print("Enter current assets: ");
+                    currentAsset = kb.nextDouble();
+                    System.out.println(" ");
+                    System.out.print("Enter current liabilities");
+                    currentLiability = kb.nextDouble();
+
+                    currentRatio = currentAsset / currentLiability;
+
+                    System.out.printf("%.4f", currentRatio);
+                    System.out.println(" ");
+                }
                 case 4 ->
                     System.out.println("test4");
                 case 5 ->
