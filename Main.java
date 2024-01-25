@@ -10,18 +10,26 @@ public class Main {
         while (!inputToCloseLoop.equals("q")) {//make loop that terminates with input "q"
 
             System.out.println("""
+                    Liquidity ratios:
                     When you see this text input the number that
                     aligns with the formula needed.
                     
-                    Quick ratio: 0
-                    Cash ratio: 1
-                    Net Working capital to total assets: 2
-                    Interval measure:3
+                    Quick ratio: 1
+                    Cash ratio: 2
+                    Current Ratio: 3
+                    Cash flow from operations ratio: 4
+                    Receivable turnover: 5
+                    Average number of days receivables outstanding (Average collection period): 6
+                    Inventory turnover: 7
+                    Average number of days in stock: 8
+                    Payable turnover: 9
+                    Average number of days parables outstanding (Average age oof parables): 10
+                    Cash conversion Cycle: 11
                     """);
             inputToSelectForm = kb.nextInt();
 
             switch (inputToSelectForm) {
-                case 0 -> {
+                case 1 -> {
                     double currentAssets;
                     double currentLiabilities;
                     double inventory;
@@ -41,12 +49,26 @@ public class Main {
                     System.out.printf("%.2f",quickRatio);
                     System.out.println("%");
                 }
-                case 1 ->
-                    System.out.println("test2");
                 case 2 ->
-                    System.out.println("test3");
+                    System.out.println("test2");
                 case 3 ->
+                    System.out.println("test3");
+                case 4 ->
                     System.out.println("test4");
+                case 5 ->
+                        System.out.println("test5");
+                case 6 ->
+                        System.out.println("test6");
+                case 7 ->
+                        System.out.println("test7");
+                case 8 ->
+                        System.out.println("test8");
+                case 9 ->
+                        System.out.println("test9");
+                case 10 ->
+                        System.out.println("test10");
+                case 11 ->
+                        System.out.println("test11");
             }
 
             System.out.println("press q to end program");
