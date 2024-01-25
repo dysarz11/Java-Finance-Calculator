@@ -49,8 +49,6 @@ public class Main {
                     System.out.println("test4");
             }
 
-            inputToSelectForm = -1;
-
             System.out.println("press q to end program");
             System.out.println("press any other key to use another formula");
             inputToCloseLoop = kb.next();
