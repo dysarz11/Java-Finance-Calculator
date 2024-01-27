@@ -2,17 +2,18 @@ import java.util.Scanner;
 public class Main {
     public static void main(String [] args) {
         final double NUM_DAYS_IN_YEAR = 365;
-        String inputToCloseLoop;
+        char inputToCloseLoop = '!';
         int inputToSelectForm; //input to select ratio formula
         int inputToSelectRatioType;
 
         Scanner kb = new Scanner(System.in);    // make scanner
 
-        do {//make loop that terminates with input "q"
+        do {//make loop that terminates when inputToCloseLoop is q
             System.out.println("""
-                    List of ratio types
-                    Enter the corresponding input of the ratio type
+                    List of ratio types:
+                    Enter the corresponding input of the ratio type.
                     
+                    Enter 0 to close program.
                     Liquidity ratios: 1
                     Profitability ratios: 2
                     Return on investment ratios: 3
@@ -24,12 +25,14 @@ public class Main {
             inputToSelectRatioType = kb.nextInt();
 
             switch (inputToSelectRatioType) {
+                case 0 -> inputToCloseLoop = 'q';
                 case 1 -> {
                     System.out.println("""
                             Liquidity ratios:
                             When you see this text input the number that
                             aligns with the ratio needed.
                             
+                            Enter 0 to close program.
                             Quick ratio: 1
                             Cash ratio: 2
                             Current Ratio: 3
@@ -45,6 +48,7 @@ public class Main {
                     inputToSelectForm = kb.nextInt(); // get input to select formula
 
                     switch (inputToSelectForm) {
+                        case 0 -> inputToCloseLoop = 'q';
                         case 1 -> { //Quick ratio
                             double currentAssets;
                             double currentLiabilities;
@@ -227,11 +231,14 @@ public class Main {
                             When you see this text input the number that
                             aligns with the ratio needed.
                             
+                            Enter 0 to close program.
+                            
                             """);
 
                     inputToSelectForm = kb.nextInt();
 
                     switch (inputToSelectForm) {
+                        case 0 -> inputToCloseLoop = 'q';
                         case 1 -> System.out.println("test1");
                         case 2 -> System.out.println("test2");
                         case 3 -> System.out.println("test3");
@@ -245,11 +252,14 @@ public class Main {
                             When you see this text input the number that
                             aligns with the ratio needed.
                             
+                            Enter 0 to close program.
+                            
                             """);
 
                     inputToSelectForm = kb.nextInt();
 
                     switch (inputToSelectForm) {
+                        case 0 -> inputToCloseLoop = 'q';
                         case 1 -> System.out.println("test1");
                         case 2 -> System.out.println("test2");
                         case 3 -> System.out.println("test3");
@@ -261,11 +271,14 @@ public class Main {
                             When you see this text input the number that
                             aligns with the ratio needed.
                             
+                            Enter 0 to close program.
+                            
                             """);
 
                     inputToSelectForm = kb.nextInt();
 
                     switch (inputToSelectForm) {
+                        case 0 -> inputToCloseLoop = 'q';
                         case 1 -> System.out.println("test1");
                         case 2 -> System.out.println("test2");
                         case 3 -> System.out.println("test3");
@@ -277,11 +290,14 @@ public class Main {
                             When you see this text input the number that
                             aligns with the ratio needed.
                             
+                            Enter 0 to close program.
+                            
                             """);
 
                     inputToSelectForm = kb.nextInt();
 
                     switch (inputToSelectForm) {
+                        case 0 -> inputToCloseLoop = 'q';
                         case 1 -> System.out.println("test1");
                         case 2 -> System.out.println("test2");
                         case 3 -> System.out.println("test3");
@@ -296,22 +312,20 @@ public class Main {
                             When you see this text input the number that
                             aligns with the ratio needed.
                             
+                            Enter 0 to close program.
+                            
                             """);
 
                     inputToSelectForm = kb.nextInt();
 
                     switch (inputToSelectForm) {
+                        case 0 -> inputToCloseLoop = 'q';
                         case 1 -> System.out.println("test1");
                         case 2 -> System.out.println("test2");
+                        case 3 -> System.out.println("test3");
                     }
                 }
             }
-
-
-
-            System.out.println("press q to end program");
-            System.out.println("press any other key to use another formula");
-            inputToCloseLoop = kb.next();
-        } while (!inputToCloseLoop.equals("q"));
+        } while (inputToCloseLoop != 'q');
     }
 }
