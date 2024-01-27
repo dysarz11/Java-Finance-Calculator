@@ -1,6 +1,7 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String [] args) {
+        final double NUM_DAYS_IN_YEAR = 365;
         String inputToCloseLoop;
         int inputToSelectForm;
 
@@ -44,7 +45,6 @@ public class Main {
                     inventory = kb.nextDouble();
 
                     quickRatio = ((currentAssets - inventory) / currentLiabilities) * 100.0;
-
                     System.out.printf("%.2f",quickRatio);
                     System.out.println("%");
                 }
@@ -77,9 +77,9 @@ public class Main {
                     System.out.println(" ");
                     System.out.print("Enter current liability: ");
                     currentLiability = kb.nextDouble();
+                    System.out.println(" ");
 
                     currentRatio = currentAsset / currentLiability;
-
                     System.out.printf("%.4f", currentRatio);
                     System.out.println(" ");
                 }
@@ -97,22 +97,112 @@ public class Main {
 
                     cfoRatio = (cfOperations / currentLiability) * 100;
                     System.out.printf("%.2f", cfoRatio);
-                    System.out.println("%4");
+                    System.out.println("%");
                 }
-                case 5 ->
-                        System.out.println("test5");
-                case 6 ->
-                        System.out.println("test6");
-                case 7 ->
-                        System.out.println("test7");
-                case 8 ->
-                        System.out.println("test8");
-                case 9 ->
-                        System.out.println("test9");
-                case 10 ->
-                        System.out.println("test10");
-                case 11 ->
-                        System.out.println("test11");
+                case 5 -> { //Receivable Turnover
+                    double netAnnualSales;
+                    double averageReceivables;
+                    double receivableTurnover;
+
+                    System.out.print("Enter net annual sales: ");
+                    netAnnualSales = kb.nextDouble();
+                    System.out.println(" ");
+                    System.out.print("Enter average receivables: ");
+                    averageReceivables = kb.nextDouble();
+                    System.out.println(" ");
+
+                    receivableTurnover = netAnnualSales / averageReceivables;
+                    System.out.printf("%.2f", receivableTurnover);
+                    System.out.println("%");
+                }
+                case 6 -> { //Average Number of days receivables outstanding (Average Collection period)
+                    double receivablesTurnover;
+                    double avgNumDaysReceivableOutstanding;
+
+                    System.out.print("Enter receivables turnover: ");
+                    receivablesTurnover = kb.nextDouble();
+                    System.out.println(" ");
+
+                    avgNumDaysReceivableOutstanding = NUM_DAYS_IN_YEAR / receivablesTurnover;
+                    System.out.printf("%.4f", avgNumDaysReceivableOutstanding);
+                    System.out.println(" ");
+                }
+                case 7 -> { //Inventory Turnover
+                    double cogs;
+                    double averageInventory;
+                    double inventoryTurnOver;
+
+                    System.out.print("Enter cost of goods sold: ");
+                    cogs = kb.nextDouble();
+                    System.out.println(" ");
+                    System.out.print("Enter the average inventory: ");
+                    averageInventory = kb.nextDouble();
+                    System.out.println(" ");
+
+                    inventoryTurnOver = cogs / averageInventory;
+                    System.out.printf("%.4f", inventoryTurnOver);
+                    System.out.println(" ");
+                }
+                case 8 -> { //Average Number of days in stock
+                    double inventoryTurnOver;
+                    double averageNumberDaysInStock;
+
+                    System.out.print("Enter inventory turn over: ");
+                    inventoryTurnOver = kb.nextDouble();
+                    System.out.println(" ");
+
+                    averageNumberDaysInStock = NUM_DAYS_IN_YEAR / inventoryTurnOver;
+                    System.out.printf("%.4f", averageNumberDaysInStock);
+                    System.out.println(" ");
+                }
+                case 9 -> { //Payable Turnover
+                    double annualPurchases;
+                    double averagePayable;
+                    double payableTurnover;
+
+                    System.out.print("Enter annual purchases: ");
+                    annualPurchases = kb.nextDouble();
+                    System.out.println(" ");
+                    System.out.print("Enter average pyables: ");
+                    averagePayable = kb.nextDouble();
+                    System.out.println(" ");
+
+                    payableTurnover = annualPurchases / averagePayable;
+                    System.out.printf("%.4f", payableTurnover);
+                    System.out.println(" ");
+                }
+                case 10 -> { //Average Number of days payables outstanding (Average age of payables) =
+                    double payableTurnover;
+                    double avgAgePay; //average age of payables
+
+                    System.out.print("Enter payable turnover: ");
+                    payableTurnover = kb.nextDouble();
+                    System.out.println(" ");
+
+                    avgAgePay = NUM_DAYS_IN_YEAR / payableTurnover;
+                    System.out.printf("%.4f", avgAgePay);
+                    System.out.println(" ");
+                }
+                case 11 -> { //Cash Conversion Cycle
+                    double avgCollectionPeriod;
+                    double avgNumDayInStock; //average number of days in stock
+                    double avgAgePay; // average age of payables
+                    double cashConversionCycle;
+
+                    System.out.print("Enter average collection period: ");
+                    avgCollectionPeriod = kb.nextDouble();
+                    System.out.println(" ");
+                    System.out.print("Enter average number of days in stock: ");
+                    avgNumDayInStock = kb.nextDouble();
+                    System.out.println(" ");
+                    System.out.print("Enter average age of payables");
+                    avgAgePay = kb.nextDouble();
+                    System.out.println(" ");
+
+                    cashConversionCycle = avgCollectionPeriod + avgNumDayInStock - avgAgePay;
+                    System.out.printf("%.4f", cashConversionCycle);
+                    System.out.println(" ");
+                }
             }
 
             System.out.println("press q to end program");
