@@ -48,7 +48,7 @@ public class Main {
                     System.out.printf("%.2f",quickRatio);
                     System.out.println("%");
                 }
-                case 2 -> { // Cash ratio
+                case 2 -> { //Cash ratio
                     double cash;
                     double marketSec;
                     double currentLiability;
@@ -67,15 +67,15 @@ public class Main {
                     System.out.printf("%.4f", cashRatio);
                     System.out.println(" ");
                 }
-                case 3 -> { // Current Ratio
+                case 3 -> { //Current Ratio
                     double currentAsset;
                     double currentLiability;
-                    double currentRatio;
+                    double currentRatio; //answer
 
                     System.out.print("Enter current assets: ");
                     currentAsset = kb.nextDouble();
                     System.out.println(" ");
-                    System.out.print("Enter current liabilities");
+                    System.out.print("Enter current liability: ");
                     currentLiability = kb.nextDouble();
 
                     currentRatio = currentAsset / currentLiability;
@@ -83,8 +83,22 @@ public class Main {
                     System.out.printf("%.4f", currentRatio);
                     System.out.println(" ");
                 }
-                case 4 ->
-                    System.out.println("test4");
+                case 4 -> { //Cash flow from operations ratio
+                    double cfOperations;
+                    double currentLiability;
+                    double cfoRatio; //answer
+
+                    System.out.print("Enter Cash flow from operations: ");
+                    cfOperations = kb.nextDouble();
+                    System.out.println(" ");
+                    System.out.println("Enter Current Liability: ");
+                    currentLiability = kb.nextDouble();
+                    System.out.println(" ");
+
+                    cfoRatio = (cfOperations / currentLiability) * 100;
+                    System.out.printf("%.2f", cfoRatio);
+                    System.out.println("%4");
+                }
                 case 5 ->
                         System.out.println("test5");
                 case 6 ->
