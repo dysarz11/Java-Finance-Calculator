@@ -3,11 +3,10 @@ public class Main {
     public static void main(String [] args) {
         String inputToCloseLoop;
         int inputToSelectForm;
-        inputToCloseLoop = " ";
 
         Scanner kb = new Scanner(System.in);    // make scanner
 
-        while (!inputToCloseLoop.equals("q")) {//make loop that terminates with input "q"
+        do {//make loop that terminates with input "q"
 
             System.out.println("""
                     Liquidity ratios:
@@ -25,11 +24,11 @@ public class Main {
                     Payable turnover: 9
                     Average number of days parables outstanding (Average age oof parables): 10
                     Cash conversion Cycle: 11
-                    """);
-            inputToSelectForm = kb.nextInt();
+                    """); // Instructions for liquidity ratios
+            inputToSelectForm = kb.nextInt(); // get input to select formula
 
             switch (inputToSelectForm) {
-                case 1 -> {
+                case 1 -> { //Quick ratio
                     double currentAssets;
                     double currentLiabilities;
                     double inventory;
@@ -49,7 +48,7 @@ public class Main {
                     System.out.printf("%.2f",quickRatio);
                     System.out.println("%");
                 }
-                case 2 -> {
+                case 2 -> { // Cash ratio
                     double cash;
                     double marketSec;
                     double currentLiability;
@@ -68,7 +67,7 @@ public class Main {
                     System.out.printf("%.4f", cashRatio);
                     System.out.println(" ");
                 }
-                case 3 -> {
+                case 3 -> { // Current Ratio
                     double currentAsset;
                     double currentLiability;
                     double currentRatio;
@@ -105,6 +104,6 @@ public class Main {
             System.out.println("press q to end program");
             System.out.println("press any other key to use another formula");
             inputToCloseLoop = kb.next();
-        }
+        } while (!inputToCloseLoop.equals("q"));
     }
 }
